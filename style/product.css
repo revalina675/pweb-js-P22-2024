@@ -112,6 +112,25 @@ nav ul li a:hover {
   font-size: 36px;
 }
 
+/* Styling for category buttons */
+.categories {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.category-button {
+  padding: 10px 20px;
+  margin: 0 5px;
+  border: none;
+  background-color: #f0f0f0;
+  cursor: pointer;
+}
+
+.category-button.active {
+  background-color: #333;
+  color: #fff;
+}
+
 /* CATALOG SECTION */
 .catalog {
   display: flex;

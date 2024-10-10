@@ -8,41 +8,50 @@
   </head>
   <body>
     <!-- HEADER -->
-<header>
-  <div class="top-bar">
-      <nav>
+    <header>
+      <div class="top-bar">
+        <nav>
           <ul class="left-items">
-              <li><a href="index.html">home</a></li>
-              <li><a href="index.html#about">about</a></li>
-              <li><a href="gallery.html">gallery</a></li>
-              <li><a href="product.html" class="active">product</a></li>
+            <li><a href="index.html">home</a></li>
+            <li><a href="index.html#about">about</a></li>
+            <li><a href="gallery.html">gallery</a></li>
+            <li><a href="product.html" class="active">product</a></li>
           </ul>
-      </nav>
+        </nav>
   
-      <div class="right-items">
+        <div class="right-items">
           <div class="search-container">
-              <input type="text" placeholder="search" class="search-bar">
+            <input type="text" placeholder="search" class="search-bar">
           </div>
           <a href="contact.html" class="contact-btn">Contact Us</a>
+        </div>
       </div>
-  </div>
-</header>
+    </header>
 
-  <div class="logo">
+    <div class="logo">
       <h1>HunThrift</h1>
-  </div>
+    </div>
 
     <!-- * Layanan/Katalog --> 
     <!-- MAIN CONTENT -->
     <main>
+      <!-- CATEGORY SECTION -->
+      <section class="categories">
+        <button class="category-button" data-category="all">All</button>
+        <button class="category-button" data-category="atasan">Atasan</button>
+        <button class="category-button" data-category="bawahan">Bawahan</button>
+        <button class="category-button" data-category="dress">Dress</button>
+        <button class="category-button" data-category="outerwear">Outerwear</button>
+        <button class="category-button" data-category="pakaian-khusus">Pakaian Khusus</button>
+      </section>
+
       <!-- CATALOG SECTION -->
       <section class="catalog">
         <h1>Catalog</h1>
         <div class="product-list">
-
           <!-- Products -->
           <!-- 1 -->
-          <div class="product-item"> <!-- * Call to Action -->
+          <div class="product-item" data-category="atasan"> <!-- Category: Atasan -->
             <a href="more.html">
               <img src="images/mcrsweater.jpg" alt="Mcr Sweater" />
               <div class="product-info">
@@ -56,8 +65,9 @@
               </div>
             </a>
           </div>
+
           <!-- 2 -->
-          <div class="product-item">
+          <div class="product-item" data-category="atasan">
             <a href="more2.html">
               <img src="images/curevest.jpg" alt="The Cure Vest" />
               <div class="product-info">
@@ -71,8 +81,9 @@
               </div>
             </a>
           </div>
+
           <!-- 3 -->
-          <div class="product-item">
+          <div class="product-item" data-category="atasan">
             <a href="more3.html">
               <img src="images/korntop.jpg" alt="Korn Top" />
               <div class="product-info">
@@ -86,8 +97,9 @@
               </div>
             </a>
           </div>
+
           <!-- 4 -->
-          <div class="product-item">
+          <div class="product-item" data-category="outerwear"> <!-- Category: Outerwear -->
             <a href="more4.html">
               <img src="images/bmthjacket.jpg" alt="BMTH Jacket" />
               <div class="product-info">
@@ -101,8 +113,9 @@
               </div>
             </a>
           </div>
+
           <!-- 5 -->
-          <div class="product-item">
+          <div class="product-item" data-category="atasan">
             <a href="more5.html">
               <img src="images/bstoretshirt.jpg" alt="B Store Tshirt" />
               <div class="product-info">
@@ -116,8 +129,9 @@
               </div>
             </a>
           </div>
+
           <!-- 6 -->
-          <div class="product-item">
+          <div class="product-item" data-category="outerwear">
             <a href="more6.html">
               <img src="images/starouter.jpg" alt="Star Outer" />
               <div class="product-info">
@@ -131,8 +145,9 @@
               </div>
             </a>
           </div>
+
           <!-- 7 -->
-          <div class="product-item">
+          <div class="product-item" data-category="bawahan"> <!-- Category: Bawahan -->
             <a href="more7.html">
               <img src="images/fadedgrayjeans.jpg" alt="Faded Gray Jeans" />
               <div class="product-info">
@@ -146,8 +161,9 @@
               </div>
             </a>
           </div>
+
           <!-- 8 -->
-          <div class="product-item">
+          <div class="product-item" data-category="bawahan">
             <a href="more8.html">
               <img src="images/nanajeans.jpg" alt="Nana Jeans" />
               <div class="product-info">
@@ -161,8 +177,9 @@
               </div>
             </a>
           </div>
+
           <!-- 9 -->
-          <div class="product-item">
+          <div class="product-item" data-category="bawahan">
             <a href="more9.html">
               <img src="images/skulljeans.jpg" alt="Skull Jeans" />
               <div class="product-info">
@@ -176,8 +193,9 @@
               </div>
             </a>
           </div>
+
           <!-- 10 -->
-          <div class="product-item">
+          <div class="product-item" data-category="dress"> <!-- Category: Dress -->
             <a href="more10.html">
               <img src="images/gothicskirt.jpg" alt="Gothic Skirt" />
               <div class="product-info">
@@ -191,33 +209,35 @@
               </div>
             </a>
           </div>
+
           <!-- 11 -->
-          <div class="product-item">
+          <div class="product-item" data-category="dress">
             <a href="more11.html">
-              <img src="images/kornskirt.jpg" alt="Korn Skirt" />
+              <img src="images/littleblackdress.jpg" alt="Little Black Dress" />
               <div class="product-info">
                 <div class="color-options">
                   <span class="color brown"></span>
                   <span class="color blue"></span>
                   <span class="color beige"></span>
                 </div>
-                <p class="product-name">Korn Skirt Corduroy</p>
-                <p class="product-price">Rp. 249.000</p>
+                <p class="product-name">Little Black Dress</p>
+                <p class="product-price">Rp. 300.000</p>
               </div>
             </a>
           </div>
-          <!-- 12  -->
-          <div class="product-item">
+
+          <!-- 12 -->
+          <div class="product-item" data-category="pakaian-khusus"> <!-- Category: Pakaian Khusus -->
             <a href="more12.html">
-              <img src="images/pinsskirt.jpg" alt="Pins Skirt" />
+              <img src="images/pinkjersey.jpg" alt="Pink Jersey" />
               <div class="product-info">
                 <div class="color-options">
                   <span class="color brown"></span>
                   <span class="color blue"></span>
                   <span class="color beige"></span>
                 </div>
-                <p class="product-name">Pins Skirt Brand Moussy</p>
-                <p class="product-price">Rp. 210.000</p>
+                <p class="product-name">Spirit Jersey (Special Edition)</p>
+                <p class="product-price">Rp. 450.000</p>
               </div>
             </a>
           </div>
@@ -225,35 +245,7 @@
       </section>
     </main>
 
-<!-- Footer -->
-<footer style="background-color: #8b705a; padding: 20px; color: black;">
-  <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap;">
-      <!-- Left Section -->
-      <div style="flex: 1; max-width: 33%;">
-          <p><strong>Est. 2024</strong></p>
-          <p>We are here to provide your need and sense of vintage stuff especially in clothes and make it true in <em>second way</em></p>
-      </div>
-
-      <!-- Middle Section -->
-      <div style="flex: 1; max-width: 33%; display: flex; flex-direction: column; align-items: center; text-align: center;">
-          <p><strong>connect with us</strong></p><br>
-          <div style="display: flex; justify-content: center; gap: 15px;">
-              <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" width="30" height="30"></a>
-              <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/174/174883.png" alt="YouTube" width="30" height="30"></a>
-              <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png" alt="TikTok" width="30" height="30"></a>
-          </div>
-      </div>
-
-      <!-- Right Section (Email, Phone, and Address stacked vertically) -->
-      <div style="flex: 1; max-width: 33%; display: flex; flex-direction: column; align-items: flex-end; text-align: right;">
-          <p><strong>Email</strong><br>team@hunthrift.com</p>
-          <p><strong>Phone</strong><br>+62 812-345-678</p>
-          <p><strong>Address</strong><br>Gedung Tower 2 ITS<br>Institut Teknologi Sepuluh Nopember, Surabaya<br>Jawa Timur, Indonesia</p>
-      </div>
-  </div>
-</footer>
-
-<script src="js/script.js"></script>
-
+    <!-- JavaScript -->
+    <script src="js/product.js"></script>
   </body>
 </html>
