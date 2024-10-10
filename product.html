@@ -18,10 +18,10 @@
             <li><a href="product.html" class="active">product</a></li>
           </ul>
         </nav>
-  
+
         <div class="right-items">
           <div class="search-container">
-            <input type="text" placeholder="search" class="search-bar">
+            <input type="text" placeholder="search" class="search-bar" />
           </div>
           <a href="contact.html" class="contact-btn">Contact Us</a>
         </div>
@@ -32,7 +32,7 @@
       <h1>HunThrift</h1>
     </div>
 
-    <!-- * Layanan/Katalog --> 
+    <!-- * Layanan/Katalog -->
     <!-- MAIN CONTENT -->
     <main>
       <!-- CATEGORY SECTION -->
@@ -41,9 +41,25 @@
         <button class="category-button" data-category="atasan">Atasan</button>
         <button class="category-button" data-category="bawahan">Bawahan</button>
         <button class="category-button" data-category="dress">Dress</button>
-        <button class="category-button" data-category="outerwear">Outerwear</button>
-        <button class="category-button" data-category="pakaian-khusus">Pakaian Khusus</button>
+        <button class="category-button" data-category="outerwear">
+          Outerwear
+        </button>
+        <button class="category-button" data-category="pakaian-khusus">
+          Pakaian Khusus
+        </button>
       </section>
+
+      <div class="category-filter">
+        <label for="itemsCount">Show items per category:</label>
+        <select id="itemsCount" onchange="updateItemsPerCategory()">
+          <option value="all">All</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+      </div>
 
       <!-- CATALOG SECTION -->
       <section class="catalog">
@@ -51,7 +67,8 @@
         <div class="product-list">
           <!-- Products -->
           <!-- 1 -->
-          <div class="product-item" data-category="atasan"> <!-- Category: Atasan -->
+          <div class="product-item" data-category="atasan">
+            <!-- Category: Atasan -->
             <a href="more.html">
               <img src="images/mcrsweater.jpg" alt="Mcr Sweater" />
               <div class="product-info">
@@ -99,7 +116,8 @@
           </div>
 
           <!-- 4 -->
-          <div class="product-item" data-category="outerwear"> <!-- Category: Outerwear -->
+          <div class="product-item" data-category="outerwear">
+            <!-- Category: Outerwear -->
             <a href="more4.html">
               <img src="images/bmthjacket.jpg" alt="BMTH Jacket" />
               <div class="product-info">
@@ -147,7 +165,8 @@
           </div>
 
           <!-- 7 -->
-          <div class="product-item" data-category="bawahan"> <!-- Category: Bawahan -->
+          <div class="product-item" data-category="bawahan">
+            <!-- Category: Bawahan -->
             <a href="more7.html">
               <img src="images/fadedgrayjeans.jpg" alt="Faded Gray Jeans" />
               <div class="product-info">
@@ -195,7 +214,8 @@
           </div>
 
           <!-- 10 -->
-          <div class="product-item" data-category="dress"> <!-- Category: Dress -->
+          <div class="product-item" data-category="dress">
+            <!-- Category: Dress -->
             <a href="more10.html">
               <img src="images/gothicskirt.jpg" alt="Gothic Skirt" />
               <div class="product-info">
@@ -227,7 +247,8 @@
           </div>
 
           <!-- 12 -->
-          <div class="product-item" data-category="pakaian-khusus"> <!-- Category: Pakaian Khusus -->
+          <div class="product-item" data-category="pakaian-khusus">
+            <!-- Category: Pakaian Khusus -->
             <a href="more12.html">
               <img src="images/pinkjersey.jpg" alt="Pink Jersey" />
               <div class="product-info">
