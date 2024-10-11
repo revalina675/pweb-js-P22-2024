@@ -10,17 +10,17 @@
     <div class="container">
       <div class="image-section">
         <div class="spc">
-          <img src="images/pinsskirt.jpg" alt="Model" class="model-image" />
+          <img src="images/pinkjersey.jpg" alt="Model" class="model-image" />
         </div>
       </div>
       <div class="details-section">
-        <h1>Pins Skirt Brand Moussy</h1>
+        <h1>Pink Jersey</h1>
         <p class="description">
           Made from high-quality, fine materials, with a very authentic vintage
           style touch, this knit blouse is soft, smooth, and trendy.
         </p>
         <div class="price">
-          <p>Rp. 210.000</p>
+          <p class="price-label">Rp.450.000</p>
           <p class="stars">★★★★★</p>
         </div>
         <div class="size">
@@ -34,7 +34,22 @@
           <div class="color-circle blue"></div>
           <div class="color-circle beige"></div>
         </div>
-        <button class="buy-button">Buy Now</button> 
+
+        <!-- Add to Cart Section -->
+        <div class="cart-section">
+          <div class="quantity-control">
+            <button id="decrease-btn">-</button>
+            <span id="quantity">1</span>
+            <button id="increase-btn">+</button>
+          </div>
+          <button class="add-to-cart" id="add-to-cart-btn">Add to Cart</button>
+        </div>
+
+        <!-- Price Display -->
+        <div class="total-price">
+          <p id="total-price">Total Price: Rp. 450.000</p>
+        </div>
+
         <div class="reviews">
           <h3>What they say ...</h3>
           <ul>
@@ -57,5 +72,8 @@
         </div>
       </div>
     </div>
+
+    <!-- JavaScript -->
+    <script src="js/more12.js"></script>
   </body>
 </html>
