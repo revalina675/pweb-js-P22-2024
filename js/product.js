@@ -55,3 +55,29 @@ document.addEventListener("DOMContentLoaded", function () {
   // Initial display setup
   filterProducts(currentCategory);
 });
+
+function updateCheckout() {
+  let cart = getCartFromLocalStorage(); // Asumsikan fungsi ini mengambil cart dari localStorage
+  let totalItems = 0;
+  let totalPrice = 0;
+  
+  cart.forEach(item => {
+    totalItems += item.quantity;
+    totalPrice += item.quantity * item.price; // item.price sudah termasuk harga yang diambil dari API atau data produk
+  });
+  
+  document.getElementById('total-items').innerText = totalItems;
+  document.getElementById('total-price').innerText = totalPrice.toLocaleString(); // Format harga agar lebih rapi
+}
+
+// Panggil updateCheckout setiap kali keranjang di-update, misalnya setelah menambah item
+document.getElementById('add-to-cart-btn').addEventListener('click', function() {
+  addItemToCart(); // Asumsikan ini fungsi untuk menambah item ke keranjang
+  updateCheckout();
+});
+
+// Inisialisasi saat halaman pertama kali dimuat
+window.onload = function() {
+  updateCheckout();
+};
+

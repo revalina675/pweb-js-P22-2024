@@ -50,18 +50,60 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
   });
 
+  // Fungsi untuk menyimpan cart ke Local Storage
+  function saveCartToLocalStorage(cart) {
+    localStorage.setItem("cart", JSON.stringify(cart));
+  }
+
+  // Fungsi untuk memuat cart dari Local Storage
+  function loadCartFromLocalStorage() {
+    const savedCart = localStorage.getItem("cart");
+    return savedCart ? JSON.parse(savedCart) : [];
+  }
+
+  // Fungsi untuk memperbarui total checkout
+  function updateCheckoutTotal() {
+    const cart = loadCartFromLocalStorage();
+    let totalItems = 0;
+    let totalAmount = 0;
+
+    cart.forEach(item => {
+      totalItems += item.quantity;
+      totalAmount += item.quantity * item.price;
+    });
+
+    // Update elemen total checkout
+    document.getElementById("checkout-total-items").textContent = `Total Items: ${totalItems}`;
+    document.getElementById("checkout-total-amount").textContent = `Total Amount: ${formatRupiah(totalAmount)}`;
+  }
+
   // Fungsi tombol "Add to Cart"
   addToCartButton.addEventListener("click", () => {
     const totalPrice = defaultPricePerItem * quantity;
-    alert(
-      `Added ${quantity} items to the cart, total price: ${formatRupiah(
-        totalPrice
-      )}`
-    );
+    const cart = loadCartFromLocalStorage();
+
+    // Cek apakah item sudah ada di cart
+    const existingItem = cart.find(item => item.id === 1); // ID produk (dalam kasus ini adalah ID 1)
+
+    if (existingItem) {
+      existingItem.quantity += quantity; // Update kuantitas jika sudah ada
+    } else {
+      cart.push({
+        id: 1, // ID produk
+        name: "Product Name", // Bisa ambil dari API, misalnya product.title
+        price: defaultPricePerItem,
+        quantity: quantity,
+      });
+    }
+
+    saveCartToLocalStorage(cart); // Simpan cart ke Local Storage
+    alert(`Added ${quantity} items to the cart, total price: ${formatRupiah(totalPrice)}`);
+    updateCheckoutTotal(); // Update tampilan checkout total
   });
 
   // Inisialisasi tampilan awal
   updateTotalPrice(); // Update total harga di awal
+  updateCheckoutTotal(); // Update total checkout di awal
 
   // Ambil data produk saat dokumen sudah dimuat
   await fetchProductData();
