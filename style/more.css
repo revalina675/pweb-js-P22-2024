@@ -246,27 +246,35 @@ body {
   padding-bottom: 10px;
 }
 
-#checkout-summary {
-  margin-top: 20px; /* Beri jarak dari elemen atasnya */
-  padding: 15px;
-  border: 1px solid #ddd; /* Garis tepi untuk pembatas */
-  background-color: #f9f9f9; /* Warna latar belakang yang lembut */
-  border-radius: 5px; /* Membuat sudut tepi agak membulat */
-  width: 300px; /* Lebar tetap */
-  text-align: center; /* Posisikan teks di tengah */
+.cart-section {
+  display: flex; 
+  align-items: center; 
+  margin-top: 20px; 
 }
 
-#checkout-summary p {
-  margin: 5px 0;
-  font-size: 16px; /* Ukuran font untuk paragraf */
-  font-weight: bold;
+.add-to-cart,
+#go-to-checkout {
+  padding: 10px 15px; 
+  background-color: #8b705a;
+  color: white; 
+  border: none; 
+  border-radius: 5px;
+  cursor: pointer; 
+  font-size: 1rem;
+  transition: background-color 0.3s; 
 }
 
-#checkout-total-items {
-  color: #333; /* Warna teks untuk total item */
+
+.add-to-cart {
+  margin-right: 5px; 
 }
 
-#checkout-total-amount {
-  color: #e74c3c; /* Warna merah untuk total harga */
+#go-to-checkout {
+  margin-left: 0; 
+}
+
+.add-to-cart:hover,
+#go-to-checkout:hover {
+  background-color: #45a049; 
 }
 

@@ -1,0 +1,86 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #8b705a; /* Warna latar belakang header */
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+
+nav a {
+    color: white; /* Warna teks tautan */
+    margin: 0 15px; /* Jarak antar tautan */
+    text-decoration: none; /* Tanpa garis bawah default */
+    font-weight: bold; /* Menebalkan teks */
+}
+
+nav a.active {
+    text-decoration: underline; /* Garis bawah untuk tautan aktif */
+}
+
+main {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white; /* Warna latar belakang utama */
+    border-radius: 8px; /* Sudut membulat */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Bayangan halus */
+}
+
+#cart-items {
+    margin-bottom: 20px; /* Jarak bawah untuk daftar keranjang */
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between; /* Mengatur isi menjadi fleksibel */
+    padding: 10px;
+    border-bottom: 1px solid #ddd; /* Garis bawah untuk setiap item */
+}
+
+.cart-item h4 {
+    margin: 0;
+}
+
+.cart-item div {
+    display: flex;
+    align-items: center;
+}
+
+.summary {
+    text-align: right; /* Mengatur agar teks total berada di sebelah kanan */
+    padding-top: 10px; /* Jarak atas untuk total */
+}
+
+.summary p {
+    margin: 5px 0; /* Jarak antara paragraf */
+}
+
+#proceed-checkout {
+    padding: 10px 20px; /* Padding untuk tombol checkout */
+    background-color: #8b705a; /* Warna latar belakang tombol */
+    color: white; /* Warna teks tombol */
+    border: none; /* Tanpa border */
+    border-radius: 5px; /* Sudut membulat */
+    cursor: pointer; /* Menunjukkan bahwa tombol dapat diklik */
+    font-size: 1rem; /* Ukuran font */
+    transition: background-color 0.3s; /* Transisi halus untuk efek hover */
+}
+
+#proceed-checkout:hover {
+    background-color: #45a049; /* Warna tombol saat hover */
+}
+
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background-color: #f1f1f1; /* Warna latar belakang footer */
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
