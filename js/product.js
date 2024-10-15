@@ -18,6 +18,11 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
+  // Event listener for quantity dropdown change
+  document.getElementById("itemsCount").addEventListener("change", () => {
+    updateItemsPerCategory();
+  });
+
   // Add event listener to cart buttons
   document.querySelectorAll(".add-to-cart").forEach((button) => {
     button.addEventListener("click", () => {
@@ -51,7 +56,8 @@ document.addEventListener("DOMContentLoaded", function () {
       selectedCount === "all" ? productItems.length : parseInt(selectedCount);
 
     let filteredItems = [...productItems].filter(
-      (item) => currentCategory === "all" || item.dataset.category === currentCategory
+      (item) =>
+        currentCategory === "all" || item.dataset.category === currentCategory
     );
 
     filteredItems.forEach((item, index) => {
@@ -76,14 +82,15 @@ document.addEventListener("DOMContentLoaded", function () {
   async function fetchDataFromAPI() {
     try {
       const response = await fetch("https://api.example.com/products");
-      if (!response.ok) {
-        throw new Error("Failed to fetch data from the API");
+      if (response.ok) {
+        const data = await response.json();
+        // Process data here (example: populate product items)
+        console.log("Data fetched successfully:", data);
+      } else {
+        console.error("Failed to fetch data from the API");
       }
-      const data = await response.json();
-      // Process data here
     } catch (error) {
       console.error("Error fetching data:", error);
-      alert("There was a problem fetching the product data. Please try again later.");
     }
   }
 
