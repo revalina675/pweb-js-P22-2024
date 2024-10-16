@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", async () => {
   let quantity = 1;
-  const defaultPricePerItem = 149000; 
+  const defaultPricePerItem = 149000;
   const quantityDisplay = document.getElementById("quantity");
   const addToCartButton = document.getElementById("add-to-cart-btn");
   const totalPriceDisplay = document.getElementById("total-price");

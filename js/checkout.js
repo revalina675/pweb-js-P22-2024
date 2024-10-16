@@ -3,22 +3,19 @@ document.addEventListener("DOMContentLoaded", () => {
     const totalItemsDisplay = document.getElementById("total-items");
     const totalPriceDisplay = document.getElementById("total-price");
 
-    // Memuat cart dari Local Storage
     function loadCartFromLocalStorage() {
         const savedCart = localStorage.getItem("cart");
         return savedCart ? JSON.parse(savedCart) : [];
     }
 
-    // Mengupdate tampilan keranjang
     function updateCartDisplay() {
         const cart = loadCartFromLocalStorage();
-        cartItemsContainer.innerHTML = ""; // Kosongkan container
+        cartItemsContainer.innerHTML = ""; 
 
         let totalItems = 0;
         let totalPrice = 0;
 
         if (cart.length === 0) {
-            // Jika keranjang kosong, tampilkan pesan
             cartItemsContainer.innerHTML = `<p>Your cart is empty.</p>`;
         } else {
             cart.forEach(item => {
@@ -44,10 +41,9 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         totalItemsDisplay.innerText = totalItems;
-        totalPriceDisplay.innerText = formatRupiah(totalPrice); // Memastikan hanya satu format harga
+        totalPriceDisplay.innerText = formatRupiah(totalPrice); 
     }
 
-    // Format angka menjadi Rupiah
     function formatRupiah(amount) {
         return new Intl.NumberFormat("id-ID", {
             style: "currency",
@@ -64,8 +60,8 @@ document.addEventListener("DOMContentLoaded", () => {
             if (item.quantity <= 0) {
                 removeFromCart(id);
             } else {
-                localStorage.setItem("cart", JSON.stringify(cart)); // Simpan perubahan
-                updateCartDisplay(); // Update tampilan
+                localStorage.setItem("cart", JSON.stringify(cart));
+                updateCartDisplay(); 
             }
         }
     };
@@ -78,16 +74,18 @@ document.addEventListener("DOMContentLoaded", () => {
         updateCartDisplay();
     };
 
-    // Inisialisasi tampilan keranjang saat halaman dimuat
     updateCartDisplay();
 
     // Tambahkan event listener untuk tombol checkout
     document.getElementById("proceed-checkout").addEventListener("click", () => {
-        // Mengosongkan keranjang
-        localStorage.removeItem("cart");
-
-        // Mengupdate tampilan untuk menunjukkan keranjang kosong
-        alert("Checkout successful! Your cart has been emptied.");
-        updateCartDisplay(); // Memperbarui tampilan untuk menunjukkan bahwa keranjang kosong
+        const cart = loadCartFromLocalStorage(); 
+        if (cart.length === 0) { 
+            alert("Your cart is empty! You cannot proceed to checkout."); 
+        } else {
+            // Mengosongkan keranjang jika ada item di dalamnya
+            localStorage.removeItem("cart");
+            alert("Checkout successful!");
+            updateCartDisplay(); 
+        }
     });
 });
